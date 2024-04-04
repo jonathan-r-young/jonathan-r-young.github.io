@@ -1,0 +1,23 @@
+name: jupyter-book-pages
+
+on:
+  push:
+    brances:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build_and_deploy_book:
+    steps:
+      - uses: actions/checkout@v4
+      - name: set up python3
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: build the book
+        run: |
+          python3 -m pip install -r requirements,txt
+          jupyter-book build pages
+      - name: deploy the book
+        run: |
+          ghp-import -n -p -f pages/_build/html
