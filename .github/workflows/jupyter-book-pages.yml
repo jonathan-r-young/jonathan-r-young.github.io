@@ -8,6 +8,7 @@ on:
 
 jobs:
   build_and_deploy_book:
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - name: set up python3
