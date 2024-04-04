@@ -21,7 +21,7 @@ jobs:
           jupyter-book build pages
       - name: Fix permissions
         run: |
-          chmod -c -R +rX "_site/" | while read line; do
+          chmod -c -R +rX "pages/_build/" | while read line; do
             echo "::warning title=Invalid file permissions automatically fixed::$line"
           done
   # Deploy the book's HTML to GitHub Pages
