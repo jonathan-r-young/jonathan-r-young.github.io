@@ -3,7 +3,13 @@
 
 format: jb-book
 root: intro
-chapters:
-- file: markdown
-- file: notebooks
-- file: markdown-notebooks
+parts:
+  - caption: Communicating I.T. Architecture 
+    chapters:
+    - file: communication/diagrams101
+  - caption: Dealing with complexity 
+    chapters:
+    - file: complexity/chapter1
+  - caption: Professional Membership 
+    chapters:
+    - file: professions/chapter1
